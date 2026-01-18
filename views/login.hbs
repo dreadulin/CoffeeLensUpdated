@@ -1,0 +1,59 @@
+<!-- Logo -->
+<div class="login-page"> 
+    <!-- FOR THE LOGO -->
+    <div class="login-logo"> 
+        <h1><i class="fa-solid fa-mug-hot logo"></i><i>COFFEE LENS</i></h1>
+    </div> <!-- END OF LOGO-->
+
+    <div class="login-box"> <!-- log in box-->
+        <form id="loginForm" action="/check_login" method="post">
+
+            <div class="inputs"> <!-- username/password-->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" minlength="8"><br><br>
+            </div>
+
+            <div class="btns"> <!-- login button -->
+                <div class="login">
+                    <button type="submit">Log In</button>
+                </div>
+            </div>
+
+            <div class="btns"> <!-- create account button -->
+                <div class="create-account">
+                    <button type="button" id="createAcc">Create Account</button>
+                    <script>
+                        document.getElementById('createAcc').addEventListener('click', function(event) {
+                        event.preventDefault();
+                        window.location.href = '/create_acc';
+                        });
+                    </script>   
+                </div>
+            </div>
+        </form>
+    </div>  
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').submit(function(e) {
+                e.preventDefault(); // Prevent the form from submitting normally
+                
+                var username = $('#username').val();
+                var password = $('#password').val();
+                
+                $.ajax({
+                    type: 'POST',
+                    url: '/check_login',
+                    data: { username: username, password: password },
+                    success: function(response) {
+                        $('#loginResult').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</div> 

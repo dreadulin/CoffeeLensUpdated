@@ -1,0 +1,93 @@
+{{>top-nav}}
+<!-- TOP NAV BAR -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class = "cafe-profile-main">
+<!-- CAFE INFORMATION -->
+    <div class = "cafe-info-container">
+        <div class = "cafe-logo"> <!-- CAFE LOGO -->
+            <img src = "{{cafe-data.logo}}">
+        </div>
+        <div class = "cafe-info">
+            <div class = "cafe-name">{{cafe-data.cafename}}
+                {{#if isLoggedIn}}
+                    <div class="edit-cafe-container">
+                        <div class="edit-cafe-btn" data-cafeid="{{cafe-data.cafeid}}">Edit Cafe</div>
+                    </div>
+                {{/if}}</div>
+                <div class ="cafe-description-container">
+                    <div class ="description">{{cafe-data.cafedesc}}</div>
+                        <div class="rating">Rating: 
+                            {{{generateStarIcons cafe-data.rating}}}
+                        </div>
+                </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const editProfileBtn = document.querySelectorAll('.edit-cafe-btn');
+                editProfileBtn.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        const cafeId = button.getAttribute('data-cafeid'); 
+                        window.location.href = '/edit_cafe?cafeId=' + encodeURIComponent(cafeId);
+                    });
+                });
+            });
+        </script>
+    </div>
+    <div class = "cafe-profile-review-container">
+<!-- REVIEWS OF THE CAFE -->
+{{#each post-data}}
+    {{#if isPromo}}
+    {{else}}
+    
+            <div class = "review-container" data-postid="{{_id}}">
+                <div class = "view-cafe-default-img">
+                    <img src = "{{profpic}}"> 
+                </div>
+                <div class ="username-review">
+                    {{{generateStarIcons rating}}}
+                    <div class="username" data-userid="{{authorid}}">{{username}}</div>
+                    <div class="review" data-postid="{{ _id }}">{{description}}</div>
+                    <div class="like_btn_container">
+                        <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId likedby)}}like-post-rating-selected{{/if}}" id="likebtn">
+                            <span class="like-btn material-icons"> thumb_up </span>
+                            <span class="like-count" id="like-count">{{upvote}}</span>
+                        </div>
+                        <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId dislikedby)}}like-post-rating-selected{{/if}}">
+                            <span class="like-btn material-icons" id="dislikebtn"> thumb_down </span>
+                            <span class="like-count" id="dislike-count">{{downvote}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<script>
+    //For user 
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewUserButtons = document.querySelectorAll('.username');
+            
+        viewUserButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const userId = button.getAttribute('data-userid'); 
+                window.location.href = '/view_profile?userId=' + encodeURIComponent(userId);
+            });
+        });
+    });
+
+    //For review
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewPromoButtons = document.querySelectorAll('.review');
+            
+        viewPromoButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const postId = button.getAttribute('data-postid'); 
+                window.location.href = '/view_post?postId=' + encodeURIComponent(postId);
+            });
+        });
+    });
+</script>
+    {{/if}}
+{{/each}}
+<script src="/common/likePostinCafe.js"></script>
+    </div>
+
+</div>

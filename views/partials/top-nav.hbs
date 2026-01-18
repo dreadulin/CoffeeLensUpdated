@@ -1,0 +1,26 @@
+<!-- DASHBOARD -->
+<div class="top-bar"> 
+<!-- FOR THE LOGO -->
+  <div class = "div-logo"> 
+    <h1> <i class="fa-solid fa-mug-hot logo"></i> <i>COFFEE LENS</i></h1>
+</div> <!-- END OF LOGO-->
+        
+<!-- FOR THE TOP NAV BAR -->
+<div class = "nav"> 
+  <div class = "top-search-bar">
+    <form action = "/search" method = "GET"> 
+      <input class = "search" type = "text" name = "query" placeholder="Search Cafe/Review"> 
+      <button type = "submit" class = "search-bttn"> Search </a> </button>
+    </form>
+  </div>
+
+
+<div class = "links">
+  <a href ="/"> Home </a> 
+  <a href ="about"> About </a> 
+  <a href ="view_all"> Cafes </a> 
+  <a href ="logout"> Log Out </a> 
+</div>
+<a href = "/view_profile?userId={{loggedInUserId}}"> <img src= {{userPfp}}> </a>
+  </div> 
+</div>

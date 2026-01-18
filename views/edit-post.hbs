@@ -1,0 +1,109 @@
+{{>top-nav}}
+
+<div class = "edit-review">
+    <!-- REVIEW POST -->
+    <div class="edit-posting">
+        <div class="poster-info">
+            <div>
+                <img class="poster" src="{{user-data.profpic}}">
+            </div>
+            <div class="poster-details">
+                <p><b>{{user-data.username}}</b></p>
+                <p>Posted: {{post-data.createdate}}</p>
+                
+            </div>
+        </div>
+
+        <div class="post-info">
+            <div class="post-pic">
+                <img src="{{post-data.image}}">
+            </div>
+            <div class="post-content">
+                <p> <b>{{post-data.title}}</b>
+                    <br> {{user-data.username}}: {{post-data.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit post -->
+    <form id="editReviewForm" action="/edit_post" method="post">
+        <input type="hidden" name="postId" value="{{post-data._id}}">
+        <input type="hidden" name="currentDate" value="{{currentDate}}">
+        <div class="edit-rev-details">
+            {{#if post-data.isPromo}}
+            <h1> Edit Promo:</h1>
+            {{else}}
+            <h1> Edit Review:</h1>
+            <h3> Edit Rating: </h3>
+            <div class="star-rating">
+                <div class="star-container">
+                    <div class="star-widget">
+                        <input type="radio" name="rate" id="rate-5" value="5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-4" value="4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-3" value="3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-2" value="2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-1" value="1">
+                        <label for="rate-1" class="fas fa-star"></label>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            <div class="edit-details-row">
+                <div class="edit-detail-item">
+                    <h3>Edit Title:</h3>
+                    <input type="text" placeholder="Change title here..." class="title-input" name="title">
+                </div>
+                <div class="edit-detail-item">
+                    <h3>Edit Description:</h3>
+                    <textarea cols="30" placeholder="Change your description here..." name="description"></textarea>
+                </div>
+                <div class="edit-detail-item">
+                    <h3>Edit image:</h3>
+                    <div class="pfp-upload">
+                        <input type="text" name = "filename" placeholder="File Url here" class="file-input">
+                    </div>
+                </div>
+            </div>
+            <div class="edit-changes-btn">
+                <button type="submit" id="editButton">Confirm Changes</button>
+                OR
+                <button type="button" id="deleteButton" >Delete Post</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</body>
+
+<script>
+    document.getElementById('editButton').addEventListener('click', function() {
+        // Submit the form for updating the post
+        document.getElementById('editReviewForm').submit();
+    });
+
+    document.getElementById('deleteButton').addEventListener('click', function() {
+        // Redirect to the delete route when the delete button is clicked
+        const postId = '{{post-data._id}}'; // Get the post ID from your template
+        fetch('/delete/' + postId, {
+            method: 'GET'
+        })
+        .then(response => {
+            if (response.ok) {
+                // Post deleted successfully, redirect or perform any other action
+                window.location.href = '/'; // Redirect to homepage
+            } else {
+                // Handle error
+                console.error('Error deleting post');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>

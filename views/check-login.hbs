@@ -1,0 +1,34 @@
+<div class="login-page"> 
+    <!-- FOR THE LOGO -->
+    <div class = "login-logo"> 
+        <h1> <i class="fa-solid fa-mug-hot logo"></i> <i>COFFEE LENS</i></h1>
+    </div> <!-- END OF LOGO-->
+
+    <div class="login-box"> <!-- log in box-->
+            {{#if success}}
+            <div class="login-status"> 
+                <h2>Successfully Logged In </h2>
+                    <button type="button" id="backHome"> Home Page </button> 
+                    <script>
+                        document.getElementById('backHome').addEventListener('click', function(event) {
+                        event.preventDefault();
+                        window.location.href = '/';
+                        });
+                    </script>                        
+                                    
+            </div>
+            
+            {{else}}
+            <div class="login-status"> 
+                <h3>Incorrect Username and/or Password </h3> 
+                    <button type="button" id="backLogin"> Back </button>    
+                    <script>
+                        document.getElementById('backLogin').addEventListener('click', function(event) {
+                        event.preventDefault();
+                        window.location.href = '/login';
+                        });
+                    </script>                         
+            </div>
+            {{/if}}   
+    </div>  
+</div> 

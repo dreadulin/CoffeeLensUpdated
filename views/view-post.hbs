@@ -1,0 +1,96 @@
+{{>top-nav}}
+<!-- TOP NAV BAR -->
+
+
+    <!--POST-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class = "posting"> 
+        <div class = "poster-info">
+            <div> 
+                <img class = "poster" src = "{{user-data.profpic}}">
+            </div>
+            <div class = "poster-details"> 
+                <p> <a href="/view_profile?userId={{user-data.userid}}"> <b> {{user-data.username}} </b> </a> {{#if user-data.isOwner}}• Establishment Owner {{else}} {{/if}}</p> 
+                <p> Posted: {{post-data.dateposted}} </p>
+            </div>
+            <div class ="edit-promo-container">
+                {{#if isLoggedIn}}
+                <div class="edit-promo-btn" data-postid="{{post-data._id}}">
+                    <a href="/edit_post?postId={{post-data._id}}">Edit Post</a>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+    
+        <div class="post-info" data-postid="{{post-data._id}}"> 
+            <div class = "post-pic"> 
+                <img src = "{{post-data.image}}">
+            </div>
+            <div class = "post-content"> 
+                <p> <b>{{post-data.title}}</b>
+                    <br>{{post-data.description}}
+                </p>  
+
+                <div class="like_btn_container">
+                    <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId post-data.likedby)}}like-post-rating-selected{{/if}}">
+                        <span class="like-btn material-icons"> thumb_up </span>
+                        <span class="like-count">{{post-data.upvote}}</span>
+                    </div>
+                    <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId post-data.dislikedby)}}like-post-rating-selected{{/if}}">
+                        <span class="like-btn material-icons"> thumb_down </span>
+                        <span class="like-count">{{post-data.downvote}}</span>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+<script src="/common/likePost.js"></script>
+
+        <div class="comment-section">
+            {{#each comments-data}}
+            <div class="reply" data-commentid="{{_id}}">
+                <div>
+                    <img src="{{profpic}}">
+                </div>
+                <div class="comment-info-box">
+                    <p> <a href="/view_profile?userId={{authorid}}"> <b> {{username}} </b> </a> {{#if isOwner}}• Establishment Owner {{else}} {{/if}} </p>
+                    <p id="comment"> {{content}} </p>
+                </div>
+                <div class="like_btn_container">
+                    <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId likedby)}}like-post-rating-selected{{/if}}">
+                        <span class="like-btn material-icons"> thumb_up </span>
+                        <span class="like-count">{{upvote}}</span>
+                    </div>
+                    <div class="like-post-rating {{#if (hasLikedUser ../loggedInUserId dislikedby)}}like-post-rating-selected{{/if}}">
+                        <span class="like-btn material-icons "> thumb_down </span>
+                        <span class="like-count">{{downvote}}</span>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+<script src="/common/likeComment.js"></script>
+
+            
+            
+        </div>
+
+        <div class="create-reply"> 
+            <form action="/post_comment" method="POST" class="reply-form"> 
+                <div class="column">
+                    <p> Post a reply: </p>
+                </div>
+                <div class="column">
+                    <textarea rows="4" cols="50" id="content" name="content"></textarea>
+                    <input type="hidden" name="postId" value="{{post-data.postid}}"> 
+                    <input type="hidden" name="postId2" value="{{post-data._id}}">
+                </div>
+                <div class="column">
+                    <button type="submit"> Post </button> 
+                </div>
+            </form>
+        </div>
+
+
+    </div>

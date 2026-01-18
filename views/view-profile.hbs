@@ -1,0 +1,95 @@
+{{>top-nav}}
+<!-- END OF TAP NAV BAR -->
+
+<div class="user-profile-main">
+    <div class="user-info-container">
+        <div class="profile-img">
+            <img src = "{{user-data.profpic}}"> 
+        </div>
+        <div class="user-info">
+            <div class="username-profile">{{user-data.username}}</div>
+            <div class="join-date">Join Date: {{user-data.joindate}}</div>
+        </div>
+        {{#if isLoggedIn}}
+        <div class ="edit-profile-container">
+        <div class="edit-profile-btn" data-userid="{{user-data.userid}}">Edit Profile</div>
+        </div>
+{{/if}}
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const editProfileBtn = document.querySelectorAll('.edit-profile-btn');
+        editProfileBtn.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const userId = button.getAttribute('data-userid'); 
+                console.log(userId);
+                window.location.href = '/edit_profile?userId=' + encodeURIComponent(userId);
+            });
+        });
+    });
+</script>
+
+    <div class="posted-reviews-container">
+        <div class="posted-reviews-label">{{#if user-data.isOwner}}POSTED PROMOS:{{else}}POSTED REVIEWS:{{/if}}</div>
+{{#each posts}}
+{{#if isPromo}}
+        <div class="user-review-container">
+            <div class="profile-post">
+                <h2>{{title}}</h2>
+                <div class="description-container">
+                    <p class="description">{{description}}</p>
+                </div>
+                <p class="date">Date Created: {{createdate}}</p>
+            </div>
+            <div class = "view-edit-container">
+                <div class="view-edit-btn view-btn" data-postid="{{_id}}">View Post</div>
+                {{#if ../isLoggedIn}}
+                <div class="view-edit-btn edit-btn" data-postid="{{_id}}">Edit Post</div>
+                {{/if}}
+            </div>
+        </div>
+{{else}}
+        <div class="user-review-container">
+            <div class="profile-post">
+                <h2>{{title}}</h2>
+                <div class="description-container">
+                    <p class="description">{{description}}</p>
+                </div>
+                <p class="date">Date Created: {{createdate}}</p>
+            </div>
+            <div class = "view-edit-container">
+                <div class="view-edit-btn view-btn" data-postid="{{_id}}">View Post</div>
+                {{#if ../isLoggedIn}}
+                <div class="view-edit-btn edit-btn" data-postid="{{_id}}">Edit Post</div>
+                {{/if}}
+            </div>
+        </div>
+{{/if}}
+{{/each}}
+<script>
+    //view button
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewPostButtons = document.querySelectorAll('.view-btn');
+            
+        viewPostButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const postId = button.getAttribute('data-postid'); 
+                window.location.href = '/view_post?postId=' + encodeURIComponent(postId);
+            });
+        });
+    });
+
+    //edit button
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewPostButtons = document.querySelectorAll('.edit-btn');
+            
+        viewPostButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const postId = button.getAttribute('data-postid'); 
+                window.location.href = '/edit_post?postId=' + encodeURIComponent(postId);
+            });
+        });
+    });
+</script>
+    </div>
+</div>

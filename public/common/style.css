@@ -1,0 +1,1674 @@
+body
+{
+    background-color: #EDE0D4;
+}
+.top-bar {
+    background-color: #7F5539;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vh;
+}
+
+.div-logo{
+    font-size: 28px;
+    color: #EDE0D4;
+}
+
+.div-logo > h1{
+    margin-top: 15px;
+    margin-bottom: 16px;
+}
+
+.logo {
+    font-size: 50px;   
+}
+
+.top-search-bar {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.search {
+    width: 5cm;
+    height: 30px;
+}
+
+.search-bttn {
+    height: 35px;
+    margin-left: 3px;
+    cursor: pointer;
+    background-color: #EDE0D4;
+    color: #7F5539;
+}
+
+.search-bttn:hover{
+    height: 35px;
+    margin-left: 3px;
+    cursor: pointer;
+    background-color: white;
+    color: #7F5539;
+}
+
+
+
+.about-pg {
+    padding: 20px;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    margin: 20px;
+    background-color: #7F5539;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-desc h1,
+.about-dev h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.about-desc p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-dev ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-dev li {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 20px; /* Add some left padding to simulate bullet points */
+}
+
+.about-dev li:before {
+    content: none; /* Remove bullet points */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    margin-right: 2px;
+}
+
+.links a:hover {
+    color: #EDE0D4;
+    text-decoration: none;
+}
+
+.nav img {
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.main-page
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #EDE0D4;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.top-cafes
+{
+    background-color: #7F5539;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+    border-radius: 0.5em;
+}
+.top-cafes::-webkit-scrollbar {
+    display: none;
+}
+
+.top-cafes h1,
+.promos h1
+{
+    color: white;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.promos::-webkit-scrollbar {
+    display: none;
+}
+
+.top-cafe
+{
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+    margin: 3px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.top-cafe p
+{
+    color: black;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.top-cafe img{
+    width: 50px;
+    height: 50px;
+}
+
+.view-cafe-box{
+    margin-left: auto;
+}
+
+.view-top-cafe
+{
+    background-color: #7F5539;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    margin-left: 10cm;
+}
+
+.view-top-cafe:hover
+{
+    background-color: #EDE0D4;
+    color: #7F5539;
+    cursor: pointer;
+}
+
+.mainpage-half{
+    margin-top: 60px;
+    padding-left: 20px;
+}
+
+.lines{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.lines > hr{
+    border: 2px #7F5539 solid;
+    border-radius: 0.5em; 
+}
+
+.bttns-div
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 25px;
+}
+
+.view-cafe-bttn, 
+.post-review-bttn
+{
+    width: 8cm; 
+    height: 180px;
+    background-color: #7F5539;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 2em;
+}
+
+.view-cafe-bttn:hover,
+.post-review-bttn:hover
+{
+    width: 8cm; 
+    height: 180px;
+    background-color: white;
+    color: #7F5539;
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 2em;
+}
+
+
+.view-cafe-bttn a,
+.post-review-bttn a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.promos {
+    margin-left: 5px;
+    padding-left: 3px;
+    background-color: #7F5539;
+    overflow: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+    height: 400px;
+    border-radius: 0.5em;
+}
+
+.promo-list {
+    background-color: white;
+    border-radius: 5px;
+    height: 65px;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.promo-list p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.view-promo {
+    background-color: #7F5539;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.view-promo:hover {
+    background-color: #EDE0D4;
+    color: #7F5539;
+    cursor: pointer;
+}
+
+/*View Cafe Profile Page*/
+.cafe-profile-main,
+.user-profile-main,
+.edit-profile-main{
+    display: flex;
+    flex-direction: column;
+    padding-left: 192px;
+    padding-right: 192px;
+    width: calc(100%-192px);
+    padding-top: 26px;
+}
+
+.cafe-info-container{
+    display:flex;
+    align-items: center;
+}
+
+.cafe-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    padding-left: 26px;
+    color: #7F5539;
+    width:1536px;
+}
+
+.cafe-description-container{
+    background-color: #7F5539;
+    color: #EDE0D4;
+    font-size: 28.6px;
+    margin-top: 17px;
+    padding: 31px 28px;
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+}
+
+.description,
+.rating,
+.username,
+.review{
+    display:flex;
+    width:100%;
+    justify-content: left;
+}
+.username{
+    font-weight: bold;
+}
+
+.username > a{
+    text-decoration: none;
+    color: white;
+    
+}
+.rating{
+    width:10%;
+    align-items: center;
+}
+
+.cafe-logo > img{
+    display:flex;
+    width: 241px;
+    height: 241px;
+    border-radius: 100%;
+}
+
+.cafe-profile-review-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.review-container{
+    display: flex;
+    align-items: center;
+    margin-top: 37px;
+    background-color: #7F5539;
+    color: #EDE0D4;
+    padding: 25px 30px;
+    width:100%;
+    height: 137px;
+    border-radius: 0.5em;
+}
+
+.username-review{
+    display:flex;
+    flex-wrap:wrap;
+    padding-left: 18px;
+    width:100%;
+    font-size: larger;
+}
+
+.username,
+.review{
+    font-size:25px;
+}
+.review{
+    width: 90%;
+}
+
+.view-cafe-default-img {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-right: 18px; /* Adjust margin as needed */
+}
+    
+.view-cafe-default-img > img{
+    border-radius: 100%;
+    width: 92px;
+    height: 92px;
+}
+
+.review > a{
+    text-decoration: none;
+    color:#EDE0D4;
+}
+.review > a:visited{
+    text-decoration: none;
+    color:#EDE0D4;
+}
+
+.review:hover,
+.username:hover{
+    color:#dbc1ac;
+    /*font-weight:bold;*/
+    cursor: pointer;
+}
+
+
+/*Like and Dislike Buttons*/
+.like_btn_container{
+    display: flex;
+    justify-content: end;
+    width:10%;
+}
+
+.like-post-rating{
+    display:flex;
+    align-items: top;
+    cursor: default;
+}
+
+.like-post-rating:not(:last-child){
+    margin-right: 12px;
+}
+
+.like-post-rating-selected >.like-btn,
+.like-post-rating-selected >.like-count{
+    color: #86945e;
+}
+
+.like-btn{
+    margin-right: 6px;
+    cursor: pointer;
+    color: #EDE0D4;
+}
+
+.like-post-rating:not(.like-post-rating-selected) > .like-btn:hover{
+    color: #dbc1ac;
+}
+/*Post A Review Page*/
+.postbox-main{
+    background-color: #7F5539;
+    margin-top: 37px;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    padding: 10px;
+    border-radius: 0.5em;
+}
+
+
+.infobox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-detail, .date-posted, .select-cafe, .star-rating, .title-box{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    color: white;
+    font-size: 20.7px;
+    width: 20vh;
+    height: 100px;
+    padding-left: 54px;
+}
+
+.date-posted, .star-rating, .title-box{
+    padding-left: 35em;
+}
+
+.profile-detail{
+    gap: 10px;
+}
+
+.profile-detail > img{
+    border-radius: 100%;
+    width: 82px;
+    height: 82px;
+}
+
+.dropdown{
+    min-width: 13em;
+    position:relative;
+    margin:1em;
+    margin-left: 40px;
+}
+
+.dropdown *{
+    box-sizing: border-box;
+}
+
+.select{
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #EDE0D4 solid;
+    border-radius: 0.5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #7F5539;
+}
+
+.select:hover{
+    background-color: #7F5539;
+    color: white;
+}
+
+.select:hover .caret {
+    border-top-color: white;
+}
+
+.dropdown:focus .menu{
+    display: block;
+}
+
+.menu{
+    list-style: none;
+    padding: 2px 5px;
+    background-color: white;
+    border: 2px #EDE0D4 solid;
+    border-radius: 0.5em;
+    color: black;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: none;
+}
+
+.menu li{  
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: 2em;
+    font-size: small;
+    margin: 2px 0px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu li:hover{
+    background-color: #7F5539;
+    color: white;
+}
+
+.star-container{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.star-rating .star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size: 35px;
+    color: grey;
+    padding: 3px;
+    float: right;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+    cursor: pointer;
+
+}
+
+input:checked ~ label{
+    color: #fd4;
+    cursor: pointer;
+
+}
+
+
+.inputbox{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.title-input {
+    width: 60%; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border: 2px solid #EDE0D4; 
+    border-radius: 5px; 
+    font-size: 20px; 
+    text-align: center;
+}
+
+
+.file-upload {
+    background-color: #EDE0D4;
+    border-radius: 0.5em;
+    padding: 4px;
+    color: white;
+    
+}
+
+
+
+.textarea{
+    height: 30vh;
+    width: 60%;
+    padding-bottom: 15px;
+    overflow: hidden;
+}
+
+.textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border: 2px #EDE0D4 solid;
+    background: white;
+    font-size: 18px;
+    color: black;
+    resize: none;
+    border-radius: 5px; 
+}
+
+form .btns{
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-evenly;
+}
+
+form .post button, .back button{
+    background-color: #7F5539;
+    height: 100px;
+    width: 200px;
+    border: 2px solid #7F5539;
+    border-radius: 6em;
+    color: white;
+    font-size: 30px;
+    font-weight: 500px;
+    cursor: pointer;
+}
+
+form .post button:hover, .back button:hover{
+    background-color: #573824;
+}
+
+
+
+/*View User Profile Page*/
+/*User Information*/
+.user-info-container,
+.posted-reviews-container{
+    width:100%;
+    display:flex;
+    background-color:#7F5539;
+    color:white;
+    padding: 20px 31px;
+    margin-bottom: 31px;
+    align-items: center;
+}
+
+.profile-img{
+    padding-right: 29px;
+}
+
+.profile-img >img{
+    width: 156px;
+    height: 156px;
+    border-radius: 100%;
+    
+}
+
+.user-info{
+    display:flex;
+    flex-wrap:wrap;
+    width:90%;
+    align-items:center;
+}
+
+.username-profile,.join-date{
+    font-size: 30px;
+    width:100%;
+}
+.join-date{
+    display:flex;
+}
+
+.edit-profile-container,
+.post-promo-container{
+    display:flex;
+    width:25%;
+    align-items: center;
+    cursor: default;
+}
+
+.post-promo-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    justify-content: center;
+    cursor: default;
+    flex-wrap: wrap;
+
+}
+
+.edit-profile-btn:hover,
+.post-promo-btn:hover{
+    background-color:#EDE0D4;
+    cursor: pointer;
+}
+
+
+.post-promo-btn,
+.edit-profile-btn{
+    display: flex;
+    width: 100%;
+    height: 73px;
+    color: #7F5539;
+    background-color: white;
+    padding: 20px;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+}
+
+
+
+.post-promo-btn > a, 
+.edit-profile-btn > a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-promo-btn:not(:last-child){
+    margin-right:10px;
+}
+
+.verified-label{
+    display:flex;
+    padding-left:60%;
+}
+.post-edit-btn-container{
+    display:flex;
+}
+
+/*User Posted Review*/
+.posted-reviews-container{
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.posted-reviews-label{
+    font-size: 22px;
+    margin-bottom: 23px;
+}
+.user-review-container{
+    display:flex;
+    height: 150px;
+    width:100%;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.user-review-container:not(last-child){
+    margin-bottom: 60px;
+}
+
+.profile-post {
+    width: 65%;
+    color: black;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: flex-start;
+}
+
+.profile-post h2 {
+    font-size: 24px; 
+    margin: 0px;
+}
+
+
+.description-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.description {
+    margin: 0;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.profile-post .date {
+    font-size: 14px; 
+    margin: 0;
+}
+
+.view-edit-container{
+    display: flex;
+    padding-right:36px;
+    justify-content: end;
+    align-items: center;
+    width:35%;
+    cursor: default;
+}
+
+.view-edit-btn{
+    display: flex;
+    background-color:#7F5539;
+    color:white;
+    width: 150px;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-edit-btn > a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.view-edit-btn:not(:last-child){
+    margin: 12px;
+}
+
+.view-edit-btn:hover{
+    background-color:#967259;
+    cursor: pointer;
+}
+
+/*View all Cafe page*/
+
+.viewall-box > h1{
+    padding-left: 15vh;
+    color: #7F5539;
+}
+
+.viewall-box > .btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.cafe-container{
+    height: 55vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 2em;
+    align-content: flex-start;
+    margin: 10px 15vh;
+    padding: 30px;
+    border-radius: 2em;
+    background: #7f553960;
+}
+
+.cafe-container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.cafe-card{
+    position: relative;
+    height: 225px;
+    width: 225px;
+    border-radius: 2em;
+    box-shadow: 3px 3px 5px #7F5539;
+    overflow: hidden;
+}
+
+.cafe-card > img, .intro{
+    border-radius: 2em;
+    height: 225px;
+    width: 225px;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    position: absolute; /* Position the .intro div */
+    top: 0; /* Align .intro to the top of .cafe-card */
+    left: 0; /* Align .intro to the left of .cafe-card */
+    width: 100%; /* Occupy full width of .cafe-card */
+    height: 100%; /* Occupy full height of .cafe-card */
+    padding: 20px;
+    color: white;
+    background: #7f5539e5;
+    overflow: auto;
+}
+
+
+.cafe-name > h1, .cafe-description > p{
+    margin: 0px;
+    padding-left: 13px;
+}
+
+.cafe-name{
+    display: flex;
+
+}
+
+.edit-cafe-container{
+    margin: 10px;
+}
+
+
+.edit-cafe-btn{
+    display: flex;
+    width: auto;
+    height: auto;
+    color: white;
+    background-color:#7f5539e5;
+    padding: 10px;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.edit-cafe-btn:hover{
+    background-color: white;
+    cursor: pointer;
+    color: #7F5539;
+}
+
+.edit-cafe-btn > a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.intro::-webkit-scrollbar {
+    display: none;
+  }
+
+.cafe-description{
+    padding-top: 10px;
+}
+
+.cafe-card:hover{
+    cursor:pointer;
+}
+
+.intro{
+    visibility: hidden;
+}
+
+.cafe-card:hover .intro{
+    visibility:visible;
+}
+
+/*Login/create account pages*/
+
+form .login button, .create-account button{
+    background-color: #967259;
+    height: 50px;
+    width: 150px;
+    border: 2px;
+    border-radius: 6em;
+    color: white;
+    font-size: 20px;
+    font-weight: 500px;
+    cursor: pointer;
+}
+
+form .create-account button{
+    background-color: transparent;
+    width: 300px;
+    font-size: 15px;
+}
+
+form .login button:hover{
+    background-color: #573824;
+}
+
+
+.login-page{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #EDE0D4;
+    align-items: center;
+}
+.login-logo{
+    font-size: 28px;
+    color: #7F5539;
+}
+
+.login-logo > h1{
+    margin-top: 15px;
+    margin-bottom: 16px;
+}
+
+.login-box{
+    display: flex; 
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 45px;
+    background: linear-gradient(145deg, #86593c, #9f6a48);
+    box-shadow:  16px 16px 3px #bb896a;
+    
+}
+
+
+
+.login-box > form{
+    padding-top: 20%;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #EDE0D4;
+}
+
+
+.login-box > form > .inputs > input[type=password],
+.login-box > form > .inputs > input[type=text]{
+    background-color: #dbc1ac;
+    border-radius: 2px;
+    padding-left: 2px;
+    box-sizing: border-box;
+    border: transparent;
+    width: auto;
+} 
+
+.login-box > .login-status{
+    padding-top: 20%;
+    justify-content: center;
+    justify-self: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #EDE0D4;
+}
+
+.login-box > .login-status > button{
+    background-color: #967259;
+    height: 50px;
+    width: 150px;
+    border: 2px;
+    border-radius: 6em;
+    color: white;
+    font-size: 20px;
+    font-weight: 500px;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.login-box > .login-status > button:hover{
+    background-color: #573824;
+}
+
+
+
+/* Viewing full post review */ 
+/* Promos posted by establishment owner */
+.posting
+{
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 60vh;
+    margin-right: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: 4px #573824 solid;
+}
+
+
+.poster-info, .post-info, .comment-section, 
+.reply, .create-reply, .post-content{
+    margin:0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.poster-info{
+    background-color: #7F5539;
+    padding: 10px;
+    display: flex;
+    color: white;
+    font-size: 19px;
+    border-bottom: 2px #573824 solid;
+    align-items: center;
+}
+
+.post-details{
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.poster-info a {
+    text-decoration: none;
+    color: white;
+}
+
+.poster-info a:hover {
+    color: #EDE0D4;
+}
+
+.poster{
+    border-radius: 5em;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.post-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-pic > img{
+    width: 100%;
+    height: 100%;
+}
+
+.post-content{
+    align-self: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #7F5539;
+    color: white;
+    border-top: 2px #573824 solid;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+}
+
+.post-content > p{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.post-content > .like_btn_container{
+    padding-top: 10px;
+    justify-content: start;
+}
+
+.thumbs-up-down-icons > img{
+    width: 20px;
+    height: 20px;
+}
+
+.comment-info-box{
+    width: 100%; /* Ensure the box takes the full width */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 10px; /* Add padding to the box */
+}
+
+.comment-section {
+    background-color: #7F5539;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-top: 1px #573824 solid;
+    border-bottom: 1px #573824 solid;
+    overflow: auto; /* Add overflow-y property to enable vertical scrolling */
+}
+
+.reply {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px #573824 solid;
+    border-bottom: 1px #573824 solid;
+    padding: 10px;
+    width: 100%; /* Ensure the width takes the full space */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */  
+    position: relative;  
+}
+
+.reply > .like_btn_container{
+    display: flex;
+    align-items: center;
+}
+
+
+.reply #comment{
+    overflow-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
+}
+
+.reply img {
+    width: 52px;
+    height: 52px;
+    margin-right: 10px;
+}
+
+
+.reply a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.reply p {
+    color: black;
+    font-size: 15px;
+    margin: 0;
+    flex-grow: 1;
+    word-break: break-all; /* Ensure long words are broken */
+}
+
+.create-reply {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.create-reply .reply-form {
+    display: flex;
+    align-items: flex-start; 
+}
+
+.create-reply .column {
+    margin: 0 10px; 
+}
+
+.create-reply p {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.create-reply button {
+    align-self: center;
+    background-color: #7F5539;
+    color: white;
+    font-size: 15px;
+    width: 100px; 
+    cursor: pointer;
+}
+
+.create-reply button:hover {
+    background-color: #EDE0D4;
+    color: #7F5539;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.create-reply textarea {
+    resize: none;
+    width: 100%; /* Take up all available space */
+}
+
+.create-reply form {
+    margin: 0;
+}
+
+/*Edit Profile*/
+.edit-profile-main{
+    flex-direction: unset;
+    margin-right: 30vh;
+    margin-left: 30vh;
+}
+
+.edit-profile-container{
+    background-color:#7F5539;
+    width:100%;
+    color:#EDE0D4;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.edit-profile-label{
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.edit-username-container,
+.edit-password-container,
+.edit-name-container{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.pfp-upload{
+    background-color: #EDE0D4;
+    border-radius: 0.5em;
+    padding: 4px;
+    color:#573824;
+    padding-left: 12px;
+    margin-top:10px;
+}
+
+.pfp-upload > .file-input{
+    margin-left: 6px;
+    width: 99%;
+}
+
+
+
+/*Edit Review*/
+
+.edit-profile-container > .back button{
+    background-color: white;
+    color: black;
+}
+
+.edit-profile-container > .back button:hover{
+    background-color: rgba(255, 255, 255, 0.548);
+    color: white;
+}
+
+.edit-promo-container,
+.edit-rev-container
+{
+    display:flex;
+    flex-grow:1;
+    align-items:center;
+    justify-content:right;
+}
+
+
+.edit-rev-btn{
+    display: flex;
+    justify-content: right;
+}
+
+.edit-promo-btn a,
+.edit-rev-btn a{
+    background-color: #EDE0D4;
+    display:flex;
+    align-items:center;
+    height: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px 15px;
+    color: #573824;
+    cursor:default;
+}
+
+.edit-promo-btn a:hover,
+.edit-rev-btn a:hover{
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #573824;
+    cursor:pointer;
+}
+
+.edit-review
+{
+    display: flex;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:35px;
+}
+
+.edit-posting{
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width:50%;
+    margin-right:20px;
+    border:4px #573824 solid;
+ }
+
+
+#editReviewForm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+
+ .edit-rev-details
+ {
+    background-color: #7F5539;
+    color: white; 
+    padding: 10px;
+    display: inline; 
+    flex-direction: column;
+    align-items: flex-start;
+    border: 4px #573824 solid;
+    width:100%;
+    flex-grow: 1; 
+ }
+
+.edit-rev-details > .star-rating{
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.edit-rev-details > .star-rating,
+.edit-rev-details > .star-rating > .star-container {
+    padding: 0;
+    margin: 0;
+}
+
+
+.edit-detail-item > .select-cafe{
+    padding: 0;
+    height: auto;
+}
+
+ .edit-detail-item > .select-cafe > .dropdown
+ {
+    margin: 0;
+ }
+
+ .edit-rev-details > h1
+ {
+    margin-bottom: 20px;
+ }
+
+ .edit-details-row {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-detail-item {
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.edit-rev-details > h3{
+    margin: 5px;
+}
+
+.edit-detail-item > h3 , .edit-rev-details > h3{
+    margin-bottom: 5px;
+}
+
+.edit-detail-item > textarea {
+    height: 30vh; 
+    resize: none; 
+}
+
+.edit-detail-item > input[type="text"],
+.edit-detail-item > textarea,
+.edit-detail-item > .pfp-upload {
+    width: 100%;
+}
+
+
+.edit-detail-item > .title-input{
+    text-align: start;
+    font-size: 19px;
+}
+
+.edit-detail-item > textarea{
+    outline: none;
+    padding: 10px;
+    border: 2px #EDE0D4 solid;
+    background: white;
+    font-size: 17px;
+    color: black;
+    resize: none;
+    border-radius: 5px;
+    height: 35vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.edit-detail-item > .pfp-upload{
+    padding-left: 0;
+}
+
+.edit-detail-item > .pfp-upload > #myFile{
+    padding-left: 10px;
+}
+
+.edit-changes-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.edit-posting > .post-info{
+    align-items: stretch;
+}
+
+.edit-changes-btn button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.search-results-heading {
+    padding-left: 20px;
+}
+
+.search-result img,
+.search-result-review img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 30px; 
+}
+
+.search-result > div,
+.search-result-review > div {
+    height: 150px; 
+    margin-right: 20px; 
+}
+
+
+.search-result, .search-result-review
+{
+    display:flex;
+    background-color:#7F5539;
+    color:white;
+    padding: 20px 31px;
+    margin-bottom: 31px;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 2em;
+}
+
+.search-info {
+    display: flex; 
+    align-items: flex-start; 
+}
+
+.search-info > div {
+    margin-right: 20px; 
+}
+
+.search-info > .search-text {
+    flex: 1; 
+}
+
+.search-text h3,.search-result h3{
+    margin:0;
+}
+
+.search-result:hover,
+.search-result-review:hover{
+    width:100%;
+    display:flex;
+    background-color: white;
+    padding: 20px 31px;
+    margin-bottom: 31px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 25px;
+    color: #7F5539;
+}
+
+.edit-add-cafe-page {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 60vh; 
+}
+
+.edit-add-cafe-box {
+    width: 60vh;
+    background-color: #573824;
+    text-align: center; /* Center align text */
+}
+
+.edit-add-cafe-box > h1{
+    background-color: #dbc1ac;
+    color: #573824;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.edit-add-cafe-box .inputbox{
+    padding-top: 20px;
+}
+
+
+.edit-add-cafe-page {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.edit-add-cafe-box {
+    width: 60vh;
+    background-color: #573824;
+    border-radius: 2em;
+}
+
+.edit-add-cafe-box > .inputbox{
+    padding-top: 20px;
+}
+.edit-add-cafe-box .post button, .edit-add-cafe-box .back button{
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+}
+
+.edit-add-cafe-box .btns{
+    margin-top: 0px;
+}
+

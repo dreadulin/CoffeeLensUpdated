@@ -1,0 +1,58 @@
+{{> top-nav}}
+
+<h1 class="search-results-heading">Search Results:</h1>
+
+{{#each results }}
+    {{#if cafename}} <!-- cafe -->
+        <div class="search-result" data-cafename="{{ cafename }}" data-cafeid="{{ cafeid }}"> 
+            <div class="search-info"> 
+                <div class="search-img"> 
+                    <img src = "{{logo}}">
+                </div>
+                <div class"search-text">
+                    <h3> {{cafename}} </h3>
+                    <p>{{cafedesc }}</p>
+                </div>
+            </div>
+        </div>
+    {{else}} <!-- review -->
+        <div class="search-result-review" data-postid = "{{_id}}">
+            <div class="search-info"> 
+                <div class="search-img"> 
+                    <img src="{{profpic}}">
+                </div>
+                <div class="search-text">
+                    <h3> {{title}} </h3>
+                    <p> {{description}} </p>
+                    <p> Posted by: {{username}} </p>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/each }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewCafeOnSearch = document.querySelectorAll('.search-result');
+        
+        viewCafeOnSearch.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const cafename = button.getAttribute('data-cafename');
+                const cafeid = button.getAttribute('data-cafeid'); 
+                window.location.href = '/view_cafe?id=' + encodeURIComponent(cafeid);
+            });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewReviewOnSearch = document.querySelectorAll('.search-result-review');
+            
+        viewReviewOnSearch.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const postId = button.getAttribute('data-postid'); 
+                window.location.href = '/view_post?postId=' + encodeURIComponent(postId);
+            });
+        });
+    });
+</script>
+

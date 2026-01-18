@@ -1,0 +1,104 @@
+{{>top-nav}}
+<form action="/post_review" method = "POST">
+<div class="postbox-main">
+    <div class="infobox">
+        <div class="profile-detail"> <!-- Profile Icon-->
+            <img src = "{{userPfp}}"> 
+            {{user}}
+            <input type="hidden" name="authorid" value="{{loggedInUserId}}">
+        </div>
+        <div class="date-posted">
+            Date: {{currentDate}}
+            <input type="hidden" name="currentDate" value="{{currentDate}}">
+        </div>
+    </div> 
+    <div class="infobox">
+        <div class="select-cafe">
+            Select Cafe:
+            <div class="dropdown" tabindex="0">  
+                <div class="select">
+                    <span class="selected">-</span>
+                    <div class="caret"></div>
+                </div>
+                <ul class="menu">
+                    {{#each cafe-data}}
+                            <li class="cafe-item" data-storeid="{{cafeid}}">{{cafename}}</li> 
+                    {{/each}}
+                </ul>
+                <input type="hidden" name="cafeid" id="selectedCafeId">
+
+            </div>
+        </div>
+         
+        <div class="star-rating">
+            Rating:
+            <div class="star-container">
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5" value="5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4" value="4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3" value="3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2" value="2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1" value="1">
+                    <label for="rate-1" class="fas fa-star"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inputbox">
+        <input type="text" name = "title" placeholder="Title" class="title-input">
+        <div class="textarea">
+            <textarea cols="30" name = "review_content" placeholder="Please describe your experience!"></textarea>
+        </div>
+        <div class="file-upload">
+            <input type="text" name = "filename" placeholder="File Url here" class="file-input">
+        </div>
+    </div>
+</div>
+<div class="btns">
+    <div class="back">
+        <button type="back" id="backButton">BACK</button>
+        <script>
+            document.getElementById('backButton').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = '/';
+            });
+        </script>
+        
+    </div>
+    <div class="post">
+        <button id = "post" type="submit">POST</button>
+    </div>
+</div>
+</form>
+
+<script>
+    // Get all cafe items
+    const cafeItems = document.querySelectorAll('.select-cafe .menu .cafe-item');
+
+    // Add click event listener to each cafe item
+    cafeItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove 'active' class from all cafe items
+            cafeItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked cafe item
+            this.classList.add('active');
+
+            const selectedCafe = this.textContent;
+            document.querySelector('.select-cafe .selected').textContent = selectedCafe;
+        
+            const cafeid = this.dataset.storeid;
+            document.getElementById('selectedCafeId').value = cafeid;
+
+            console.log("Selected Store ID:", cafeid);   
+
+        });
+    });
+
+</script>

@@ -1,0 +1,36 @@
+{{>top-nav}}
+
+<div class="edit-profile-main">
+    <div class="edit-profile-container">
+        <div class="edit-profile-label">
+            Edit Profile
+        </div>
+        <form action="/edit_profile" method="POST">
+            <div class="edit-username-container"><!--EDIT USERNAME-->
+                <div class="current-username">
+                    Current Username: {{user-data.username}}
+                </div>
+                <div class ="edit-username">
+                    Enter New Username: <input type="text" id="username" name="username">
+                </div>
+            </div>
+
+            <div class="edit-username">
+                Enter img url: <input type="text" id="myFile" name="filename">
+            </div>
+
+            <div class="edit-changes-btn">
+                <button type="submit">Confirm Changes</button>
+            </div>
+        </form>
+        <div class="back">
+            <button type="back" id="backButton">BACK</button>
+            <script>
+                document.getElementById('backButton').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.location.href = '/';
+                });
+            </script>
+        </div>
+    </div>
+</div>

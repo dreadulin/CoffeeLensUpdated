@@ -1,0 +1,82 @@
+{{>top-nav}}
+<!-- MAIN PAGE -->
+<div class = "main-page">
+
+<!-- TOP RATED CAFE --> 
+<div class = "top-cafes"> 
+    <h1> TOP RATED CAFES: </h1>
+
+{{#each cafe-data }}
+    <div class = "top-cafe"> 
+        <div> 
+            <img src="{{ logo }}">
+        </div>
+        <div> 
+            <p> {{ cafename }} </p>
+        </div>
+        <div class="view-cafe-box">
+            <button class="view-top-cafe" data-cafename="{{ cafename }}" data-cafeid="{{ cafeid }}">View Cafe</button>
+        </div>
+    </div>
+{{/each}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewCafeButtons = document.querySelectorAll('.view-top-cafe');
+        
+        viewCafeButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const cafename = button.getAttribute('data-cafename');
+                const cafeid = button.getAttribute('data-cafeid'); 
+                window.location.href = '/view_cafe?id=' + encodeURIComponent(cafeid);
+            });
+        });
+    });
+</script>
+</div>
+
+<div class = "mainpage-half"> 
+<!-- BUTTONS: VIEW CAFE & POST A REVIEW -->
+    <div class="lines"><hr></div>
+    <div class = "bttns-div"> 
+        <a href = "view_all"> <button class = "view-cafe-bttn"> View All Cafe </button> </a> 
+        {{#if isOwner}}
+        <a href = "post_promo"> <button class = "post-review-bttn"> Post a Promo </button></a>
+        <a href = "create_cafe"> <button class = "post-review-bttn"> Add a Cafe </button></a>
+        {{else}}
+        <a href = "post_review">  <button class = "post-review-bttn"> Post a Review </button> </a>
+        {{/if}}
+    </div>
+
+<!-- PROMOS -->
+    <div class="promos"> 
+    <h1> Promos posted by establishment owners </h1>
+    {{#each post-data}}
+        {{#if isPromo}}
+            <div class="promo-list"> 
+                <p>{{description}}</p>
+                <button class="view-promo" data-postid="{{ _id }}">View Details</button>
+            </div>
+        {{/if}}
+    {{/each}}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const viewPromoButtons = document.querySelectorAll('.view-promo');
+            
+            viewPromoButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const postId = button.getAttribute('data-postid'); 
+                    window.location.href = '/view_post?postId=' + encodeURIComponent(postId);
+                });
+            });
+        });
+    </script>
+
+    <div class="lines"><hr></div>
+</div>
+
+</div>
+
+
+

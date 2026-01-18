@@ -1,0 +1,43 @@
+{{>top-nav}}
+<div class="viewall-box">
+    <h1>List of Cafes:</h1>
+    <div class="cafe-container">
+        {{#each cafe-data}}
+        <div class="cafe-card" data-cafename="{{cafename}}" data-cafeid="{{cafeid}}">
+            <img src="{{logo}}">
+            <div class="intro">
+                <div class="cafe-name">
+                    <h1>{{cafename}}</h1>
+                </div>
+                <div class="cafe-description">
+                    <p>{{cafedesc}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="btns">
+        <div class="back">
+            <button type="button" id="backButton">BACK</button>
+            <script>
+                document.getElementById('backButton').addEventListener('click', function() {
+                    window.location.href = '/';
+                });
+            </script>
+        </div>
+    </div>
+
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cafeCards = document.querySelectorAll('.cafe-card');
+        
+        cafeCards.forEach(function (cafeCard) {
+            cafeCard.addEventListener('click', function () {
+                const cafename = cafeCard.getAttribute('data-cafename');
+                const cafeid = cafeCard.getAttribute('data-cafeid'); 
+                window.location.href = '/view_cafe?name=' + encodeURIComponent(cafename) + '&id=' + encodeURIComponent(cafeid);
+            });
+        });
+    });
+</script>

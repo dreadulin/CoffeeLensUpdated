@@ -1,0 +1,35 @@
+<div class="edit-add-cafe-page"> 
+    <div class="edit-add-cafe-box"> 
+        <h1>Edit your Cafe!</h1>
+        <form action="/edit_cafe?cafeId={{cafeId}}" method="POST">
+            <div class="inputbox">
+                <input type="text" name="cafename" placeholder="Cafe Name" class="title-input"> 
+                <div class="textarea">
+                    <textarea cols="30" name="cafedesc" placeholder="Enter cafe description..."></textarea> 
+                </div>
+                <div class="file-upload">
+                    <input type="text" name = "filename" placeholder="File Url here" class="file-input">
+                </div>
+            </div>
+
+            <div class="btns">
+                <div class="back">
+                    <button type="back" id="backButton">CANCEL</button>
+                    <script>
+                        document.getElementById('backButton').addEventListener('click', function(event) {
+                            event.preventDefault();
+                            window.location.href = '/';
+                        });
+                    </script>
+                </div>
+                <div class="post">
+                    <input type="hidden" name="action" value="edit">
+                    <button id="post" type="submit">EDIT</button> 
+                </div>
+                <div class="post">
+                    <button id="post" name="action" value="delete" type="submit">DELETE</button> 
+                </div>
+            </div>
+        </form>
+    </div>
+</div> 

@@ -1,0 +1,32 @@
+<div class="login-page"> 
+    <div class="login-box"> <!-- log in box-->
+    
+    <form action="/create_acc" method="POST"> 
+    
+    <div class="inputs"> <!-- username/password-->
+        <label for="email">Username: &nbsp;&emsp;&emsp;&emsp;&nbsp;</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password: &emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="password" id="password" name="password" minlength="8"><br><br>
+        <label for="password">Re-enter Password: </label>
+        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8"><br><br>
+        <a> Are you an Establishment Owner? </a>
+        <label for="owner"> Yes </label>
+        <input type="radio" id="owner" name="accountType" value="owner">
+        <label for="owner"> No </label>
+        <input type="radio" id="not-owner" name="accountType" value="not-owner">
+
+    </div>
+
+    <div class="btns"> <!-- login button -->
+        <div class="login">
+            
+            <button type="submit" id="backHome"> Create Account </button>
+            <script>
+            </script> 
+            
+        </div>                      
+    </div>
+    </form>
+    </div>
+</div>
